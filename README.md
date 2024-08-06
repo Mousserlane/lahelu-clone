@@ -32,3 +32,4 @@ I'm using the [Feature Driven](https://medium.com/@Evelyn.Taylor/structuring-rea
 4. Button component should be a generic component
 5. Not tested on Android yet.
 6. Still contain unused Expo components & codes.
+7. No date parser for date posts
