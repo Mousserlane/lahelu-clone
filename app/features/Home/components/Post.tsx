@@ -20,7 +20,7 @@ export const Post: FC<IPostProps> = ({ data }) => {
         <Image
           source={data.fileURL}
           style={{ width: '100%', height: 240 }}
-          contentFit='scale-down'
+          contentFit='contain'
           contentPosition='center'
         />
       </ThemedView>
