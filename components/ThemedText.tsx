@@ -5,27 +5,33 @@ import { useThemeColor } from '@/hooks/useThemeColor';
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link' | "small" | "smallBold";
 };
 
 export function ThemedText({
   style,
-  lightColor,
+  lightColor = "#525252",
   darkColor,
   type = 'default',
   ...rest
 }: ThemedTextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
 
+  const typeMap = {
+    "default": styles.default,
+    "title": styles.title,
+    "defaultSemiBold": styles.defaultSemiBold,
+    "subtitle": styles.subtitle,
+    "link": styles.link,
+    "small": styles.small,
+    "smallBold": styles.smallBold
+  }
+
   return (
     <Text
       style={[
         { color },
-        type === 'default' ? styles.default : undefined,
-        type === 'title' ? styles.title : undefined,
-        type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
-        type === 'subtitle' ? styles.subtitle : undefined,
-        type === 'link' ? styles.link : undefined,
+        typeMap[type],
         style,
       ]}
       {...rest}
@@ -57,4 +63,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#0a7ea4',
   },
+  small: {
+    fontSize: 12
+  },
+  smallBold: {
+    fontSize: 12,
+    fontWeight: 'bold'
+  }
 });

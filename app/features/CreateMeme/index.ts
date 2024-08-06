@@ -1,0 +1,1 @@
+export type { Meme, MemeStore } from './types'
