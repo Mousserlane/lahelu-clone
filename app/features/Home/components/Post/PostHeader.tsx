@@ -3,12 +3,12 @@ import MaterialIcons from '@expo/vector-icons/MaterialCommunityIcons'
 
 import { ThemedText, ThemedView } from '@/components'
 import { UserInformation } from '../../../User/components/UserInformation'
-import type { Meme } from '../../../CreateMeme'
+import type { Post } from '../../../CreatePost'
 import { StyleSheet } from 'react-native'
 import { useThemeColor } from '@/hooks/useThemeColor'
 
 interface IPostProps {
-  data: Meme
+  data: Post
 }
 
 

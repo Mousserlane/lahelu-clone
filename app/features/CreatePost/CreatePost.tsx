@@ -7,19 +7,19 @@ import { SpecialTags } from "@/constants/Tags"
 import { InputGroup } from "./components/InputGroup"
 import { ImageUploader } from "./components/ImageUploader"
 import { useGlobalStore } from "@/app/stores"
-import { Meme } from "./types"
+import { Post } from "./types"
 import { User } from "../User"
 import { useNavigation } from "expo-router"
 
-interface ICreateMemeProps { }
+interface ICreatePostProps { }
 
-type FormKey = "title" | "tag" | "isSensitive" | "isSiteCompliant"
+type FormKey = keyof Pick<Post, "title" | "isSensitive" | "isSiteCompliant"> | "tag"
 type FormData = {
   [key in FormKey]: string | boolean | null;
 }
 
-const CreateMeme: FC<ICreateMemeProps> = () => {
-  const { setMeme } = useGlobalStore();
+const CreatePost: FC<ICreatePostProps> = () => {
+  const { setPost } = useGlobalStore();
   const navigation = useNavigation()
   const [isSpecialTagExpanded, setIsSpecialTagExpanded] = useState<boolean>(false);
   const [tags, setTags] = useState<string[]>([])
@@ -62,13 +62,13 @@ const CreateMeme: FC<ICreateMemeProps> = () => {
     setIsSpecialTagExpanded(prevState => !prevState)
   }
 
-  const createMeme = () => {
+  const createPost = () => {
     const dummyUser: User = {
       avatarURL: "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/05/25/ojan-skestajpg-20210525112130.jpg",
       username: "ojan_hypnosis"
     }
     // Should be named as Post
-    const meme: Meme = {
+    const post: Post = {
       author: dummyUser,
       title: formData.title as string,
       tags,
@@ -76,7 +76,7 @@ const CreateMeme: FC<ICreateMemeProps> = () => {
       isSensitive: formData.isSensitive as boolean,
       isSiteCompliant: formData.isSiteCompliant as boolean,
     }
-    setMeme(meme)
+    setPost(post)
     navigation.goBack()
   }
 
@@ -149,7 +149,7 @@ const CreateMeme: FC<ICreateMemeProps> = () => {
           />
         </ThemedView>
 
-        <TouchableOpacity style={styles.button} onPress={createMeme}>
+        <TouchableOpacity style={styles.button} onPress={createPost}>
           <ThemedText style={styles.buttonText}>
             Buat
           </ThemedText>
@@ -194,4 +194,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 })
-export default CreateMeme
+export default CreatePost

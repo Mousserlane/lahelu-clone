@@ -1,13 +1,13 @@
 import type { FC } from 'react'
 
 import { Pill, ThemedText, ThemedView } from '@/components'
-import type { Meme } from '../../CreateMeme'
+import type { Post as PostType } from '../../CreatePost'
 import { StyleSheet } from 'react-native'
 import { PostHeader } from './Post/PostHeader'
 import { Image } from 'expo-image'
 
 interface IPostProps {
-  data: Meme
+  data: PostType
 }
 
 

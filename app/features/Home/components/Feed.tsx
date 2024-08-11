@@ -1,15 +1,15 @@
 import type { FC } from "react";
 import { FlatList } from "react-native";
-import type { Meme } from '@/app/features/CreateMeme'
+import type { Post as PostType } from '@/app/features/CreatePost'
 import { ThemedText } from "@/components";
 import { Post } from "./Post";
 
 interface IFeedProps {
-  data: Meme[]
+  data: PostType[]
 }
 
 export const Feed: FC<IFeedProps> = ({ data }) => {
-  const renderItem = ({ item }: { item: Meme }) => {
+  const renderItem = ({ item }: { item: PostType }) => {
     return (
       <Post
         data={item}

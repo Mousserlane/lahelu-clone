@@ -1,6 +1,6 @@
 import type { Comment } from '../Comments'
 import { User } from '../User';
-export type Meme = {
+export type Post = {
   title: string;
   fileURL: string;
   isSensitive: boolean;
@@ -15,9 +15,9 @@ export type Meme = {
   // topicGoal?: unknown
 }
 
-export type MemeStore = {
-  memes: Meme[];
-  setMeme: (meme: Meme) => void;
-  setInitialData: (initialData: Meme[]) => void;
+export type PostStore = {
+  posts: Post[];
+  setPost: (post: Post) => void;
+  setInitialData: (initialData: Post[]) => void;
 }
 

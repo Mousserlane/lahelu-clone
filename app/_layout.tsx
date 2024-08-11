@@ -15,7 +15,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  const { setInitialData, memes } = useGlobalStore()
+  const { setInitialData, posts } = useGlobalStore()
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -23,7 +23,7 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
-      setInitialData(memes.length == 0 ? initialData : memes)
+      setInitialData(posts.length == 0 ? initialData : posts)
     }
   }, [loaded]);
 

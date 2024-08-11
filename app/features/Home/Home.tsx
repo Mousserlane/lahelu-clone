@@ -5,11 +5,11 @@ import { Feed } from './components/Feed';
 
 interface IHomeProps { }
 export const Home: FC<IHomeProps> = () => {
-  const { memes } = useGlobalStore()
+  const { posts } = useGlobalStore()
 
   return (
     <ThemedView style={style.container}>
-      <Feed data={memes} />
+      <Feed data={posts} />
     </ThemedView>
   )
 }

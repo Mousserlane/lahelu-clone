@@ -1,11 +1,11 @@
-import type { Meme } from "@/app/features/CreateMeme";
+import type { Post } from "@/app/features/CreatePost";
 
-export const initialData: Meme[] = [
+export const initialData: Post[] = [
   {
     title: 'Welcome',
     fileURL: "https://www.antagonist.nl/blog/wp-content/uploads/2014/04/meme_bad_luck_brian_repost.jpg",
     isSensitive: false,
-    siteCompliant: true,
+    isSiteCompliant: true,
     tags: ["random", "rage"],
     author: {
       username: "xAnangx",
@@ -16,7 +16,7 @@ export const initialData: Meme[] = [
     title: 'Abababa',
     fileURL: "https://www.antagonist.nl/blog/wp-content/uploads/2014/04/meme_bad_luck_brian_repost.jpg",
     isSensitive: false,
-    siteCompliant: true,
+    isSiteCompliant: true,
     tags: ["random", "rage"],
     author: {
       username: "xAnangx",
@@ -27,7 +27,7 @@ export const initialData: Meme[] = [
     title: 'Biar gak Kosong',
     fileURL: "https://imgx.sonora.id/crop/0x0:0x0/x/photo/2023/02/07/meme-capybarajpg-20230207091339.jpg",
     isSensitive: false,
-    siteCompliant: true,
+    isSiteCompliant: true,
     tags: ["binatang", "cringe"],
     author: {
       username: "xAnangx",
