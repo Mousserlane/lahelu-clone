@@ -13,7 +13,7 @@ const BottomSheetMenu: BottomSheetMenu[] = [
     title: "Buat meme",
     icon: 'image-plus',
     iconProvider: MaterialCommunityIcons,
-    href: 'create-meme'
+    href: 'create-post'
   },
   {
     title: 'Buat topik',

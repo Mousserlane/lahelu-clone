@@ -29,7 +29,7 @@ export default function TabLayout() {
           }}
         />
         <Tabs.Screen
-          name="create-meme"
+          name="create-post"
           listeners={{
             tabPress: (p) => { p.preventDefault(); setIsBottomSheetOpen(true) }
           }
