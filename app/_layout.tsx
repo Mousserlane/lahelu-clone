@@ -7,7 +7,7 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { initialData } from "@/constants/InitData"
-import { useGlobalStore } from './stores';
+import { useGlobalStore } from '@/stores';
 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.

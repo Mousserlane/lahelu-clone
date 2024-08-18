@@ -1,4 +1,4 @@
-import { useGlobalStore } from '@/app/stores';
+import { useGlobalStore } from '@/stores';
 import { ThemedText, ThemedView } from '@/components';
 import { FC } from 'react';
 import { Feed } from './components/Feed';
