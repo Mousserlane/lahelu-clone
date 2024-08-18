@@ -8,6 +8,8 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { initialData } from "@/constants/InitData"
 import { useGlobalStore } from '@/stores';
+import { SafeAreaView } from 'react-native';
+import { Colors } from '@/constants/Colors';
 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -32,11 +34,13 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors[colorScheme ?? 'light'].background }}>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </ThemeProvider>
+    </SafeAreaView>
   );
 }

@@ -13,7 +13,7 @@ export default function TabLayout() {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState<boolean>(false)
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors[colorScheme ?? 'light'].background }}>
+    <>
       <Header />
       <Tabs
         screenOptions={{
@@ -50,6 +50,6 @@ export default function TabLayout() {
           <BottomSheetNavMenu closeSheet={() => setIsBottomSheetOpen(false)} />
         </BottomSheet>
       )}
-    </SafeAreaView>
+    </>
   );
 }
