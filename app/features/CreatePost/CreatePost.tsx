@@ -6,7 +6,7 @@ import { Pill, ThemedText, ThemedView } from "@/components"
 import { SpecialTags } from "@/constants/Tags"
 import { InputGroup } from "./components/InputGroup"
 import { ImageUploader } from "./components/ImageUploader"
-import { useGlobalStore } from "@/app/stores"
+import { useGlobalStore } from "@/stores"
 import { Post } from "./types"
 import { User } from "../User"
 import { useNavigation } from "expo-router"
@@ -98,12 +98,9 @@ const CreatePost: FC<ICreatePostProps> = () => {
         />
         <View style={styles.tagsContainer}>
           {tags.map((tag, index) => (
-            <Pill key={`${tag}-${index}`}>
-              <TouchableOpacity onPress={() => removeTags(index)}>
-                <MaterialCommunityIcons name="close" size={12} />
-              </TouchableOpacity>
-              <ThemedText type="smallBold" style={{ marginLeft: 4 }}>{tag}</ThemedText>
-            </Pill>
+            <TouchableOpacity key={`${tag}-${index}`} onPress={() => removeTags(index)} style={styles.tags}>
+              <Pill text={tag} leftElement={<MaterialCommunityIcons name="close" size={12} />} />
+            </TouchableOpacity>
           ))}
         </View>
         <InputGroup
@@ -123,13 +120,9 @@ const CreatePost: FC<ICreatePostProps> = () => {
         </View>
         <View style={styles.tagsContainer}>
           {isSpecialTagExpanded && SpecialTags.map((tag, index) => (
-            <Pill key={`${tag}-${index}`}>
-              <TouchableOpacity onPress={() => addTag(tag)}>
-                <ThemedText type="smallBold">
-                  {tag}
-                </ThemedText>
-              </TouchableOpacity>
-            </Pill>
+            <TouchableOpacity key={`${tag}-${index}`} onPress={() => addTag(tag)} style={styles.tags}>
+              <Pill text={tag} />
+            </TouchableOpacity>
           ))}
         </View>
 
@@ -192,6 +185,9 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textAlign: 'center',
     fontWeight: 'bold'
+  },
+  tags: {
+    marginVertical: 4
   }
 })
 export default CreatePost
