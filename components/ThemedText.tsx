@@ -16,7 +16,6 @@ export function ThemedText({
   ...rest
 }: ThemedTextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
-
   const typeMap = {
     "default": styles.default,
     "title": styles.title,
