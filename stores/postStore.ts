@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand'
-import { Post, PostStore } from '../features/CreatePost/types'
+import { Post, PostStore } from '@/app/features/CreatePost/types'
 
 export const createPostStore: StateCreator<PostStore, [], [], PostStore> = (set) => ({
   posts: [],
