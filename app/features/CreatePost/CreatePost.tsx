@@ -154,13 +154,13 @@ const CreatePost: FC<ICreatePostProps> = () => {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingVertical: 24, paddingHorizontal: 16 },
+  container: { paddingVertical: 12, paddingHorizontal: 16 },
   header: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 16
+    paddingBottom: 16,
   },
   specialTagButton: {
     fontWeight: 'bold',
