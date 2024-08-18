@@ -29,11 +29,7 @@ export const InputGroup: FC<IInputGroupProps> = ({
           placeholder={placeholder}
           value={value}
           onChangeText={(val) => onChange(val, name)}
-          returnKeyType='done'
           onSubmitEditing={onSubmit}
-        // onKeyPress={(e) => {
-        //   console.log('e', e.nativeEvent.key)
-        // }}
         />
       </ThemedView>
     </View>

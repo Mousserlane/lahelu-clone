@@ -10,7 +10,8 @@ export const initialData: Post[] = [
     author: {
       username: "xAnangx",
       avatarURL: "https://img.okezone.com/content/2019/10/22/598/2120447/peserta-indonesian-idol-2019-ini-sukses-bikin-anang-hermansyah-curhat-ZzVWJft5TD.JPG"
-    }
+    },
+    datePosted: new Date("2024-08-17T12:00:00Z"),
   },
   {
     title: 'Abababa',
@@ -21,7 +22,8 @@ export const initialData: Post[] = [
     author: {
       username: "xAnangx",
       avatarURL: "https://img.okezone.com/content/2019/10/22/598/2120447/peserta-indonesian-idol-2019-ini-sukses-bikin-anang-hermansyah-curhat-ZzVWJft5TD.JPG"
-    }
+    },
+    datePosted: new Date("2024-08-17T12:00:00Z"),
   },
   {
     title: 'Biar gak Kosong',
@@ -32,6 +34,7 @@ export const initialData: Post[] = [
     author: {
       username: "xAnangx",
       avatarURL: "https://img.okezone.com/content/2019/10/22/598/2120447/peserta-indonesian-idol-2019-ini-sukses-bikin-anang-hermansyah-curhat-ZzVWJft5TD.JPG"
-    }
+    },
+    datePosted: new Date("2024-08-17T12:00:00Z"),
   }
 ]

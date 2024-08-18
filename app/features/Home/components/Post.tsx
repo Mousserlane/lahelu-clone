@@ -56,7 +56,7 @@ export const Post: FC<IPostProps> = ({ data }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 8
+    marginVertical: 12
   },
   postHeader: {
     flex: 1,

@@ -4,15 +4,17 @@ import React, { useState } from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { BottomSheet, ThemedText } from '@/components';
+import { BottomSheet, Header, ThemedText, ThemedView } from '@/components';
 import { BottomSheetNavMenu } from '@/components/navigation/BottomSheetNavMenu';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState<boolean>(false)
 
   return (
-    <>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors[colorScheme ?? 'light'].background }}>
+      <Header />
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
@@ -48,6 +50,6 @@ export default function TabLayout() {
           <BottomSheetNavMenu closeSheet={() => setIsBottomSheetOpen(false)} />
         </BottomSheet>
       )}
-    </>
+    </SafeAreaView>
   );
 }

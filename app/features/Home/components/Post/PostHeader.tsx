@@ -6,6 +6,7 @@ import { UserInformation } from '../../../User/components/UserInformation'
 import type { Post } from '../../../CreatePost'
 import { StyleSheet } from 'react-native'
 import { useThemeColor } from '@/hooks/useThemeColor'
+import { useDateParser } from '@/hooks/useDateParser'
 
 interface IPostProps {
   data: Post
@@ -14,13 +15,14 @@ interface IPostProps {
 
 export const PostHeader: FC<IPostProps> = ({ data }) => {
   const color = useThemeColor({}, 'text')
+  const dateStr = useDateParser(data.datePosted!)
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.postHeader}>
         <UserInformation user={data.author} />
         <ThemedText type="small" style={{ marginHorizontal: 8 }}>·</ThemedText>
         {/** TODO : use real date and parse it */}
-        <ThemedText type="small">1 hari</ThemedText>
+        <ThemedText type="small">{dateStr}</ThemedText>
         <ThemedView style={{ flex: 1, alignItems: 'flex-end' }}>
           <MaterialIcons name="dots-horizontal" size={16} color={color} />
         </ThemedView>

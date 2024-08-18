@@ -31,14 +31,7 @@ export const BottomSheetNavMenu: FC<IBottomSheetProps> = ({
     )
   }
   return (
-    <ThemedView>
-      <View style={styles.header}>
-        <ThemedText type='subtitle'>Pilihan</ThemedText>
-        <TouchableOpacity onPress={closeSheet}>
-          <MaterialCommunityIcons name='close' size={20} />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.separator} />
+    <ThemedView style={styles.container}>
       <View style={styles.content}>
         {BottomSheetMenu.map((menu, index) => (
           renderMenuItems(menu, `${menu.title}-${index}`)
@@ -49,11 +42,8 @@ export const BottomSheetNavMenu: FC<IBottomSheetProps> = ({
 }
 
 const styles = StyleSheet.create({
-  header: {
+  container: {
     paddingTop: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
   separator: {
     flex: 1,

@@ -75,6 +75,7 @@ const CreatePost: FC<ICreatePostProps> = () => {
       fileURL: image!,
       isSensitive: formData.isSensitive as boolean,
       isSiteCompliant: formData.isSiteCompliant as boolean,
+      datePosted: new Date()
     }
     setPost(post)
     navigation.goBack()
